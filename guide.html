@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Python Guide - Python for Everyone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="guide-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>🐍 <a href="index.html">Python for Everyone</a></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#introduction">Guide</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="guide-content">
+        <!-- Table of Contents -->
+        <aside class="toc">
+            <h3>Python Guide Contents</h3>
+            <ul>
+                <li><a href="#introduction">1. Introduction</a></li>
+                <li><a href="#setup">2. Setup</a></li>
+                <li><a href="#first-program">3. First Program</a></li>
+                <li><a href="#variables">4. Variables & Types</a></li>
+                <li><a href="#operators">5. Operators</a></li>
+                <li><a href="#input-output">6. Input & Output</a></li>
+                <li><a href="#conditionals">7. Conditionals</a></li>
+                <li><a href="#loops">8. Loops</a></li>
+                <li><a href="#functions">9. Functions</a></li>
+                <li><a href="#collections">10. Collections</a></li>
+                <li><a href="#dictionaries">11. Dictionaries</a></li>
+                <li><a href="#strings">12. Strings</a></li>
+                <li><a href="#file-handling">13. File Handling</a></li>
+                <li><a href="#exceptions">14. Exceptions</a></li>
+                <li><a href="#modules">15. Modules</a></li>
+                <li><a href="#mini-projects">16. Mini Projects</a></li>
+                <li><a href="#next-steps">17. Next Steps</a></li>
+            </ul>
+        </aside>
+
+        <div class="guide-main">
+            <section id="introduction" class="guide-section">
+                <h1>1. Introduction to Python</h1>
+                <p class="intro-text">Welcome to the world of programming! This guide introduces Python, a fantastic first language. It's designed to be easy to read and write, making it perfect for beginners.</p>
+                
+                <h2>What is Python?</h2>
+                <p>Python is a high-level, general-purpose programming language. This means it's written in a way that is easy for humans to understand, and you can use it to build almost anything: websites, games, data analysis tools, AI, and more.</p>
+
+                <h2>Why is Python so Popular?</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <h3>🌟 Simple and Clean</h3>
+                        <p>The syntax (the rules of the language) is very clean and looks a lot like English.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>👥 Large Community</h3>
+                        <p>Millions of developers use Python, so it's easy to find help and examples online.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>📚 Great Libraries</h3>
+                        <p>Python has a huge collection of pre-written code (called libraries) that you can use to build amazing things quickly.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="setup" class="guide-section">
+                <h1>2. Setup & Installation</h1>
+                
+                <h2>Step 1: Install Python</h2>
+                <p>First, you need to download and install Python on your computer:</p>
+                <ol>
+                    <li>Go to <a href="https://python.org" target="_blank">python.org</a></li>
+                    <li>Click "Download Python" (it will detect your operating system)</li>
+                    <li>Run the installer</li>
+                    <li><strong>Important:</strong> Check "Add Python to PATH" during installation</li>
+                </ol>
+
+                <h2>Step 2: Choose a Code Editor</h2>
+                <p>While you can write Python in any text editor, using a proper code editor makes life much easier. We recommend <strong>Visual Studio Code (VS Code)</strong> - it's a great choice. It's free and powerful.</p>
+                <ol>
+                    <li>Download it from <a href="https://code.visualstudio.com" target="_blank">code.visualstudio.com</a></li>
+                    <li>Install it, then open the "Extensions" view on the left sidebar</li>
+                    <li>Search for "Python" and install the official extension by Microsoft</li>
+                </ol>
+            </section>
+
+            <section id="first-program" class="guide-section">
+                <h1>3. Your First Python Program</h1>
+                <p>It's a tradition for every programmer to start with a "Hello, World!" program. This simple program just prints a message to the screen, but it confirms that your setup is working correctly.</p>
+                
+                <p>In your IDE, create a new file named <code>hello.py</code> and type the following code:</p>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>hello.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># The print() function displays text on the screen
+print("Hello, World!")</code></pre>
+                </div>
+
+                <p>To run it, click the 'Run' button in your IDE or open a terminal and type <code>python hello.py</code>.</p>
+                
+                <div class="output-block">
+                    <div class="output-header">Output:</div>
+                    <pre>Hello, World!</pre>
+                </div>
+
+                <p>The <code>print()</code> function is a built-in Python command that displays output.</p>
+            </section>
+
+            <section id="variables" class="guide-section">
+                <h1>4. Python Basics: Variables & Data Types</h1>
+                <p>Variables are containers for storing data values. Python has various data types, and you don't need to declare them explicitly; the type is inferred from the value you assign.</p>
+
+                <h2>Common Data Types</h2>
+                <ul>
+                    <li><strong>String (<code>str</code>):</strong> Plain text, enclosed in quotes. e.g., <code>"New York"</code></li>
+                    <li><strong>Integer (<code>int</code>):</strong> Whole numbers. e.g., <code>5</code></li>
+                    <li><strong>Float (<code>float</code>):</strong> Numbers with decimals. e.g., <code>19.99</code></li>
+                    <li><strong>Boolean (<code>bool</code>):</strong> True or False values. e.g., <code>True</code></li>
+                </ul>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>variables_example.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># String variable
+name = "Alice"
+city = "Paris"
+
+# Integer variables
+age = 25
+score = 100
+
+# Float variables
+height = 5.8
+price = 19.99
+
+# Boolean variables
+is_student = True
+has_license = False
+
+# Print variables
+print("Name:", name)
+print("Age:", age)
+print("Height:", height)
+print("Is student:", is_student)</code></pre>
+                </div>
+
+                <div class="output-block">
+                    <div class="output-header">Output:</div>
+                    <pre>Name: Alice
+Age: 25
+Height: 5.8
+Is student: True</pre>
+                </div>
+            </section>
+
+            <section id="operators" class="guide-section">
+                <h1>5. Operators</h1>
+                <p>Operators are special symbols that perform operations on variables and values.</p>
+
+                <h2>Arithmetic Operators</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>arithmetic_operators.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># Arithmetic operators
+a = 10
+b = 3
+
+print("Addition:", a + b)        # 13
+print("Subtraction:", a - b)     # 7
+print("Multiplication:", a * b)  # 30
+print("Division:", a / b)        # 3.333...
+print("Floor Division:", a // b) # 3
+print("Modulus:", a % b)         # 1
+print("Exponent:", a ** b)       # 1000</code></pre>
+                </div>
+
+                <h2>Comparison Operators</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>comparison_operators.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># Comparison operators
+x = 5
+y = 8
+
+print("Equal:", x == y)          # False
+print("Not equal:", x != y)      # True
+print("Greater than:", x > y)    # False
+print("Less than:", x < y)       # True
+print("Greater or equal:", x >= y) # False
+print("Less or equal:", x <= y)  # True</code></pre>
+                </div>
+            </section>
+
+            <section id="input-output" class="guide-section">
+                <h1>6. Input & Output</h1>
+                <p>Learn how to get input from users and display output.</p>
+
+                <h2>Getting User Input</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>input_example.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># Getting input from user
+name = input("What's your name? ")
+age = input("How old are you? ")
+
+print("Hello,", name)
+print("You are", age, "years old")
+
+# Converting input to numbers
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+result = num1 + num2
+print("Sum:", result)</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Tip:</strong> The <code>input()</code> function always returns a string. Use <code>int()</code> or <code>float()</code> to convert to numbers.
+                </div>
+            </section>
+
+            <section id="conditionals" class="guide-section">
+                <h1>7. Conditionals (If/Else)</h1>
+                <p>Conditionals allow your program to make decisions based on certain conditions.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>conditionals_example.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># Simple if statement
+age = int(input("Enter your age: "))
+
+if age >= 18:
+    print("You can vote!")
+else:
+    print("You cannot vote yet.")
+
+# Multiple conditions with elif
+score = int(input("Enter your test score: "))
+
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+elif score >= 70:
+    print("Grade: C")
+elif score >= 60:
+    print("Grade: D")
+else:
+    print("Grade: F")</code></pre>
+                </div>
+            </section>
+
+            <section id="loops" class="guide-section">
+                <h1>8. Loops</h1>
+                <p>Loops allow you to repeat code multiple times.</p>
+
+                <h2>For Loops</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>for_loops.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># For loop with range
+print("Counting from 1 to 5:")
+for i in range(1, 6):
+    print(i)
+
+# For loop with list
+fruits = ["apple", "banana", "cherry"]
+print("Fruits:")
+for fruit in fruits:
+    print(fruit)</code></pre>
+                </div>
+
+                <h2>While Loops</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>while_loops.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># While loop
+count = 1
+while count <= 5:
+    print("Count:", count)
+    count += 1
+
+# Guessing game with while loop
+import random
+secret = random.randint(1, 10)
+guess = 0
+
+while guess != secret:
+    guess = int(input("Guess a number (1-10): "))
+    if guess < secret:
+        print("Too low!")
+    elif guess > secret:
+        print("Too high!")
+    else:
+        print("Correct!")</code></pre>
+                </div>
+            </section>
+
+            <section id="functions" class="guide-section">
+                <h1>9. Functions</h1>
+                <p>Functions are reusable blocks of code that perform specific tasks.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>functions_example.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># Simple function
+def greet(name):
+    return f"Hello, {name}!"
+
+# Function with multiple parameters
+def calculate_area(length, width):
+    area = length * width
+    return area
+
+# Function with default parameter
+def introduce(name, age=25):
+    return f"Hi, I'm {name} and I'm {age} years old."
+
+# Using the functions
+message = greet("Alice")
+print(message)
+
+area = calculate_area(5, 3)
+print("Area:", area)
+
+intro1 = introduce("Bob")
+intro2 = introduce("Charlie", 30)
+print(intro1)
+print(intro2)</code></pre>
+                </div>
+            </section>
+
+            <section id="collections" class="guide-section">
+                <h1>10. Collections (Lists)</h1>
+                <p>Lists are ordered collections that can store multiple items.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>lists_example.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># Creating lists
+fruits = ["apple", "banana", "cherry"]
+numbers = [1, 2, 3, 4, 5]
+mixed = ["hello", 42, 3.14, True]
+
+# Accessing items
+print("First fruit:", fruits[0])
+print("Last number:", numbers[-1])
+
+# Modifying lists
+fruits.append("orange")  # Add item
+fruits.remove("banana")  # Remove item
+fruits[0] = "grape"      # Change item
+
+print("Updated fruits:", fruits)
+
+# List methods
+print("Length:", len(fruits))
+print("Index of cherry:", fruits.index("cherry"))
+
+# List slicing
+subset = numbers[1:4]  # Items from index 1 to 3
+print("Subset:", subset)</code></pre>
+                </div>
+            </section>
+
+            <section id="dictionaries" class="guide-section">
+                <h1>11. Dictionaries</h1>
+                <p>Dictionaries store data in key-value pairs.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>dictionaries_example.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># Creating a dictionary
+person = {
+    "name": "Alice",
+    "age": 25,
+    "city": "New York",
+    "is_student": True
+}
+
+# Accessing values
+print("Name:", person["name"])
+print("Age:", person.get("age"))
+
+# Adding new key-value pair
+person["email"] = "alice@example.com"
+
+# Modifying existing value
+person["age"] = 26
+
+# Dictionary methods
+print("Keys:", list(person.keys()))
+print("Values:", list(person.values()))
+
+# Looping through dictionary
+for key, value in person.items():
+    print(f"{key}: {value}")</code></pre>
+                </div>
+            </section>
+
+            <section id="strings" class="guide-section">
+                <h1>12. String Operations</h1>
+                <p>Strings have many useful methods for text manipulation.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>strings_example.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># String methods
+text = "Hello, World!"
+
+print("Original:", text)
+print("Uppercase:", text.upper())
+print("Lowercase:", text.lower())
+print("Length:", len(text))
+
+# String formatting
+name = "Alice"
+age = 25
+message = f"Hello, my name is {name} and I'm {age} years old."
+print(message)
+
+# String slicing
+word = "Python"
+print("First 3 characters:", word[:3])
+print("Last 3 characters:", word[-3:])
+
+# String methods
+sentence = "  learn python programming  "
+print("Stripped:", sentence.strip())
+print("Words:", sentence.split())
+print("Replace:", sentence.replace("python", "Java"))</code></pre>
+                </div>
+            </section>
+
+            <section id="file-handling" class="guide-section">
+                <h1>13. File Handling</h1>
+                <p>Learn how to read from and write to files.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>file_handling.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># Writing to a file
+with open("example.txt", "w") as file:
+    file.write("Hello, File!\n")
+    file.write("This is line 2\n")
+
+# Reading from a file
+with open("example.txt", "r") as file:
+    content = file.read()
+    print("File content:")
+    print(content)
+
+# Reading line by line
+with open("example.txt", "r") as file:
+    for line_number, line in enumerate(file, 1):
+        print(f"Line {line_number}: {line.strip()}")
+
+# Appending to a file
+with open("example.txt", "a") as file:
+    file.write("This is line 3\n")</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Tip:</strong> Always use <code>with open()</code> - it automatically closes the file when done.
+                </div>
+            </section>
+
+            <section id="exceptions" class="guide-section">
+                <h1>14. Exception Handling</h1>
+                <p>Handle errors gracefully with try-except blocks.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>exceptions_example.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># Basic try-except
+try:
+    number = int(input("Enter a number: "))
+    result = 10 / number
+    print("Result:", result)
+except ValueError:
+    print("That's not a valid number!")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+
+# Multiple exceptions and finally
+try:
+    file = open("nonexistent.txt", "r")
+    content = file.read()
+except FileNotFoundError:
+    print("File not found!")
+except Exception as e:
+    print(f"An error occurred: {e}")
+finally:
+    print("This always runs")
+
+# Safe input function
+def get_integer(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Please enter a valid integer.")
+
+age = get_integer("Enter your age: ")
+print(f"You are {age} years old.")</code></pre>
+                </div>
+            </section>
+
+            <section id="modules" class="guide-section">
+                <h1>15. Modules & Libraries</h1>
+                <p>Use external libraries and create your own modules.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>modules_example.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code># Importing built-in modules
+import random
+import math
+import datetime
+
+# Using random module
+print("Random number:", random.randint(1, 100))
+print("Random choice:", random.choice(["apple", "banana", "cherry"]))
+
+# Using math module
+print("Square root of 16:", math.sqrt(16))
+print("Pi:", math.pi)
+
+# Using datetime module
+now = datetime.datetime.now()
+print("Current time:", now.strftime("%Y-%m-%d %H:%M:%S"))
+
+# Specific imports
+from random import choice, randint
+from math import sqrt, pi
+
+print("Choice:", choice([1, 2, 3, 4, 5]))
+print("Square root:", sqrt(25))</code></pre>
+                </div>
+            </section>
+
+            <section id="mini-projects" class="guide-section">
+                <h1>16. Mini Projects</h1>
+                <p>Put your skills to practice with these complete projects!</p>
+
+                <h2>Project 1: Simple Calculator</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>calculator.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code>def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x / y
+
+print("Select operation:")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+choice = input("Enter choice (1/2/3/4): ")
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+if choice == '1':
+    print(f"{num1} + {num2} = {add(num1, num2)}")
+elif choice == '2':
+    print(f"{num1} - {num2} = {subtract(num1, num2)}")
+elif choice == '3':
+    print(f"{num1} * {num2} = {multiply(num1, num2)}")
+elif choice == '4':
+    print(f"{num1} / {num2} = {divide(num1, num2)}")
+else:
+    print("Invalid input")</code></pre>
+                </div>
+
+                <h2>Project 2: Number Guessing Game</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>guessing_game.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code>import random
+
+def guessing_game():
+    secret = random.randint(1, 100)
+    attempts = 0
+    max_attempts = 7
+    
+    print("Welcome to the Number Guessing Game!")
+    print(f"I'm thinking of a number between 1 and 100.")
+    print(f"You have {max_attempts} attempts to guess it.")
+    
+    while attempts < max_attempts:
+        try:
+            guess = int(input(f"Attempt {attempts + 1}: Enter your guess: "))
+            attempts += 1
+            
+            if guess == secret:
+                print(f"🎉 Congratulations! You guessed it in {attempts} attempts!")
+                return
+            elif guess < secret:
+                print("📈 Too low!")
+            else:
+                print("📉 Too high!")
+                
+            remaining = max_attempts - attempts
+            if remaining > 0:
+                print(f"You have {remaining} attempts left.")
+                
+        except ValueError:
+            print("Please enter a valid number!")
+    
+    print(f"😞 Game over! The number was {secret}")
+
+guessing_game()</code></pre>
+                </div>
+
+                <h2>Project 3: Contact Book</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>contact_book.py</span>
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                    </div>
+                    <pre><code>import json
+
+class ContactBook:
+    def __init__(self):
+        self.contacts = {}
+        self.load_contacts()
+    
+    def add_contact(self, name, phone, email=""):
+        self.contacts[name] = {
+            "phone": phone,
+            "email": email
+        }
+        self.save_contacts()
+        print(f"Contact '{name}' added successfully!")
+    
+    def view_contacts(self):
+        if not self.contacts:
+            print("No contacts found.")
+            return
+        
+        print("\n📞 Your Contacts:")
+        print("-" * 30)
+        for name, info in self.contacts.items():
+            print(f"Name: {name}")
+            print(f"Phone: {info['phone']}")
+            if info['email']:
+                print(f"Email: {info['email']}")
+            print("-" * 30)
+    
+    def search_contact(self, name):
+        if name in self.contacts:
+            info = self.contacts[name]
+            print(f"\nFound contact:")
+            print(f"Name: {name}")
+            print(f"Phone: {info['phone']}")
+            if info['email']:
+                print(f"Email: {info['email']}")
+        else:
+            print(f"Contact '{name}' not found.")
+    
+    def delete_contact(self, name):
+        if name in self.contacts:
+            del self.contacts[name]
+            self.save_contacts()
+            print(f"Contact '{name}' deleted successfully!")
+        else:
+            print(f"Contact '{name}' not found.")
+    
+    def save_contacts(self):
+        try:
+            with open("contacts.json", "w") as file:
+                json.dump(self.contacts, file)
+        except Exception as e:
+            print(f"Error saving contacts: {e}")
+    
+    def load_contacts(self):
+        try:
+            with open("contacts.json", "r") as file:
+                self.contacts = json.load(file)
+        except FileNotFoundError:
+            self.contacts = {}
+        except Exception as e:
+            print(f"Error loading contacts: {e}")
+            self.contacts = {}
+
+def main():
+    book = ContactBook()
+    
+    while True:
+        print("\n📱 Contact Book Menu:")
+        print("1. Add Contact")
+        print("2. View All Contacts")
+        print("3. Search Contact")
+        print("4. Delete Contact")
+        print("5. Exit")
+        
+        choice = input("Enter your choice (1-5): ")
+        
+        if choice == '1':
+            name = input("Enter name: ")
+            phone = input("Enter phone: ")
+            email = input("Enter email (optional): ")
+            book.add_contact(name, phone, email)
+        
+        elif choice == '2':
+            book.view_contacts()
+        
+        elif choice == '3':
+            name = input("Enter name to search: ")
+            book.search_contact(name)
+        
+        elif choice == '4':
+            name = input("Enter name to delete: ")
+            book.delete_contact(name)
+        
+        elif choice == '5':
+            print("Goodbye!")
+            break
+        
+        else:
+            print("Invalid choice! Please try again.")
+
+if __name__ == "__main__":
+    main()</code></pre>
+                </div>
+            </section>
+
+            <section id="next-steps" class="guide-section">
+                <h1>17. Next Steps in Python Learning</h1>
+                <p>🎉 Congratulations on learning the basics! This is just the beginning. The most important thing is to keep coding and building projects that excite you.</p>
+
+                <h2>Where to Go From Here?</h2>
+                <div class="next-steps-grid">
+                    <div class="next-step-card">
+                        <h3>🌐 Web Development</h3>
+                        <p>Use frameworks like <strong>Django</strong> or <strong>Flask</strong> to build websites and web applications.</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h3>📊 Data Science & Machine Learning</h3>
+                        <p>Use libraries like <strong>Pandas</strong>, <strong>NumPy</strong>, and <strong>Scikit-learn</strong> to analyze data and build AI models.</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h3>🤖 Automation</h3>
+                        <p>Write scripts to automate boring, repetitive tasks using libraries like <strong>Selenium</strong> and <strong>PyAutoGUI</strong>.</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h3>🎮 Game Development</h3>
+                        <p>Use libraries like <strong>Pygame</strong> to create simple 2D games and interactive applications.</p>
+                    </div>
+                </div>
+
+                <h2>Keep Learning Resources</h2>
+                <ul class="resource-list">
+                    <li>📚 <strong>Official Python Documentation:</strong> docs.python.org</li>
+                    <li>💻 <strong>Practice Coding:</strong> leetcode.com, hackerrank.com</li>
+                    <li>🎓 <strong>Online Courses:</strong> Coursera, edX, Udemy</li>
+                    <li>👥 <strong>Community:</strong> Reddit r/learnpython, Stack Overflow</li>
+                    <li>📖 <strong>Books:</strong> "Automate the Boring Stuff with Python", "Python Crash Course"</li>
+                </ul>
+
+                <div class="encouragement">
+                    <h3>🌟 Remember</h3>
+                    <p>Programming is a skill that improves with practice. Don't worry if things seem challenging at first - that's completely normal! Keep coding, stay curious, and most importantly, have fun building amazing things!</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block').querySelector('code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.innerHTML = '✓ Copied!';
+                button.style.background = '#22c55e';
+                
+                setTimeout(() => {
+                    button.innerHTML = '📋 Copy';
+                    button.style.background = '';
+                }, 2000);
+            }).catch(() => {
+                alert('Could not copy code to clipboard');
+            });
+        }
+
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Highlight current section in TOC
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.guide-section');
+            const tocLinks = document.querySelectorAll('.toc a');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100) {
+                    currentSection = '#' + section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
